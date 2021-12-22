@@ -1,8 +1,11 @@
 const express = require('express')
 const axios = require('axios')
+const cors = require('cors')
 const app = express()
 const port = 3000
 const pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon'
+
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
