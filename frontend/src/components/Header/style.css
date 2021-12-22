@@ -1,0 +1,12 @@
+header{
+  background-color:#EF5350;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+h1{
+  color: #fff;
+  font-style: italic;
+}
