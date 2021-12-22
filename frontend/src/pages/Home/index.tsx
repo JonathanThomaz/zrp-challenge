@@ -1,7 +1,7 @@
 import { Button } from 'components/Button';
 import { Header } from 'components/Header';
 import { Input } from 'components/Input';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import api from 'services/api';
 import './style.css';
 
@@ -9,15 +9,16 @@ function Home() {
   const [pokemonName, setPokemonName] = useState('');
   const [message, setMessage] = useState('Digite o nome de um pokemon');
   const [pokemonAbilities, setPokemonAbilities] =
-    useState<Array<string> | null>();
-  const handleSubmit = async () => {
+    useState<Array<string> | null>(null);
+  const handleSubmit = useCallback(async () => {
     try {
+      setPokemonAbilities(null);
       const response = await api.get<Array<string>>(`/pokemon/${pokemonName}`);
       setPokemonAbilities(response.data);
     } catch (error) {
       setMessage('Esse pokemon não existe');
     }
-  };
+  }, [pokemonName]);
   return (
     <div className="container">
       <Header title="Pokemon" />
