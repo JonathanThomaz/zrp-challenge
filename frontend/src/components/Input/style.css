@@ -1,0 +1,17 @@
+.inputContainer {
+  width: 100%;
+  margin: 2px;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+input {
+  border: none;
+  background-color: transparent;
+}
+input:focus-visible{
+  outline:none
+}
