@@ -28,7 +28,7 @@ app.get('/pokemon/:pokemon', async (req, res) => {
         });
         res.send(arrayAbilities)    
     } catch (error) {
-        res.send(error).status(500)        
+        res.status(404).send(error)
     }
 })
 
